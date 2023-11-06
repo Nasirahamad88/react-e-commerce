@@ -81,7 +81,7 @@ This project is a full-stack e-commerce website designed to provide an online sh
 
 This project is deployed on Netlify. The deployment process is automatically triggered when changes are pushed to the `main` branch.
 
-Access the live demo: [E-commerce Website](https://your-website-url.netlify.app)
+Access the live demo: [E-commerce Website]([https://full-stack-react-e-commerce.netlify.app/])
 
 ## Contributing
 
