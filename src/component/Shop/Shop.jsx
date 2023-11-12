@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
-import './Shop.css'
+
 
 const Shop = () => {
+    const [searchTerm, setSearchTerm]=useState('')
     const [products, setProducts] = useState([]);
+    console.log(products);
     useEffect( ()=>{
         fetch('products.json')
         .then(res=>res.json())
@@ -13,20 +15,27 @@ const Shop = () => {
 
     ,[])
 
+    const filteredProducts = products.filter((product) =>
+    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
 
     return (
-        <div className='shop-container'>
-            <div className="products-container">
+        <div className='flex'>
+             <div className="w-1/3">
+                <input className='mx-12 bg-blue-200 py-2 px-12' placeholder='Search...' value={searchTerm}
+                onChange={(e)=>setSearchTerm(e.target.value)}
+                ></input>
+            </div>
+            <div className="w-2/3 grid grid-cols-3 gap-4 ">
                 {
-                    products.map(product=><Product
+                    filteredProducts.map(product=><Product
                         key={product.id}
                         product={product}
                         ></Product>)
                 }
             </div>
-            <div className="cart-container">
-                <h1>cart</h1>
-            </div>
+           
 
         </div>
     );

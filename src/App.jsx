@@ -1,5 +1,6 @@
-import './component/Header/Header'
-import Header from './component/Header/Header'
+import Category from './component/Category'
+import './component/Navbar/Navbar'
+import Header from './component/Navbar/Navbar'
 import Shop from './component/Shop/Shop'
 import Hero from './component/hero'
 
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Header/>
       <Hero/>
+      <Category/>
       <Shop/>
     </div>
   )
